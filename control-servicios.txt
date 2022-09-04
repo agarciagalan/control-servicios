@@ -1,0 +1,24 @@
+###### EjecutarVerificador.ps1
+# script para ejecutar el verificador cada minuto
+for(;;) {
+ try {
+  # ejecutar script de verificacion
+  # ruta script verificacion ej: C:/scripts/Verificar.ps1
+ }
+ catch {
+  # pasar $_ a un archivo log
+ }
+ # esperar un minuto
+ Start-Sleep 60
+}
+
+
+###### Verificar.ps1
+# script para verificar si los servicios indicados estan corriendo
+$servicios = "WerSvc", "WpnService", "XblGameSave"
+foreach ($servicio in $servicios){
+    $nombre = $servicio
+    $estado = (Get-Service "WpnService" | Select-Object status)
+    Write-Host $estado
+
+}
