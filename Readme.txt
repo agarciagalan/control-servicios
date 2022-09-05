@@ -1,6 +1,10 @@
 Resumen
 El paro de servicios de forma no controlada, que deben correr 24/7, ha hecho necesaria la creación de un script que se encargue de controlar el estado de estos, para que en caso de que se encuentren parados, se vuelvan a activar.
 
+Creación de trabajo
+Para  que se ejecute el script principal en segundo plano, se puede iniciar un trabajo.
+Start-Job -FilePath <ruta_EjecutarVerificador.ps1>
+
 EjecutarVerificador.ps1
 Es el script principal.
 Se ejecuta un bucle infinito que inicia Verificar.ps1 cada 60 segundos.
