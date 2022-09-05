@@ -16,3 +16,15 @@ Es el script secundario.
 Se encarga de, mediante un bucle foreach, obtener los estados de los servicios indicados y en caso de que el servicio se encuentre parado volver a iniciarlo.
 Primero debe indicar la lista de servicios que se desea controlar la ejecución.
 Por último establecer una ruta para el archivo log, donde se podrá ver a que fecha y hora se han iniciado los servicios que estaban parados. Puede ser útil para posibles predicciones.
+
+Instalación de EjecutarVerificador.ps1 como servicio
+# Nombre servicio
+$NombreServicio = 'controlServicios'
+# Ruta de powershell
+$RutaPowershell = 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe'
+# Argumentos a pasar al ejecutable de PowerShell:
+# ExecutionPolicy para asegurarnos de que no se bloquea la ejecución del script
+# File donde indicamos la ruta de nuestro script
+$Argumentos= '-ExecutionPolicy Unrestricted -File <ruta_script>'
+#instalar como servicio
+nssm install $NombreServicio $RutaPowershell $Argumentos
