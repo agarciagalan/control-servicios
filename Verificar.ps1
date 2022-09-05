@@ -3,7 +3,7 @@ $servicios = <lista_servicios>
 foreach ($servicio in $servicios){
     $estado = (Get-Service $servicio | Select-Object status)
     # Si el servicio indicado está apagado
-    if ($estado -like "*Stopped}"){
+    if (Get-Service -Name $servicio | Where-Object {$_.Status -eq "Stopped"}){
         # Iniciar servicio
         Start-Service $servicio
         # Obtener fecha y hora de activacion
