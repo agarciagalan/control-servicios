@@ -7,9 +7,7 @@ foreach ($servicio in $servicios){
         Start-Service $servicio
         # Obtener fecha y hora de activacion
         $fechHora = Get-Date
-        # Establecer contenido del log
-        $contenido = $fechHora, $servicio, "Servicio iniciado."
         # añadir el contenido al archivo log
-        Add-Content -Value $contenido -Path <Ruta_log>
+        Add-Content -Value $fechHora, $servicio, "Servicio iniciado.", "----------------" -Path <Ruta_log>
     }
 }
