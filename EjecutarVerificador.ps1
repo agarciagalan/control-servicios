@@ -2,7 +2,7 @@
 for(;;) {
  try {
   # ejecutar script de verificacion
-  <ruta_script_verificacion_ej_C:/scripts/Verificar.ps1>
+  Start-Job -FilePath <ruta_script_verificacion_ej_C:/scripts/Verificar.ps1>
  }
  catch {
   # pasar $_ a un archivo log
