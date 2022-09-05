@@ -9,7 +9,7 @@ EjecutarVerificador.ps1
 Es el script principal.
 Se ejecuta un bucle infinito que inicia Verificar.ps1 cada 60 segundos.
 Primero se debe establecer la ruta del script secundario a ejecutar.
-Por último, se debe establecerse una ruta para el log, donde se guardará la información de posibles errores en la ejecución. Es opcional pero puede ser útil para la detección de posibles errores.
+Por último, debe establecerse una ruta para el log, donde se guardará la información de posibles errores en la ejecución. Es opcional pero puede ser útil para la detección de posibles errores.
 
 Verificar.ps1
 Es el script secundario.
